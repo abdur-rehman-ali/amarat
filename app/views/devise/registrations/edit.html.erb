@@ -4,8 +4,7 @@
         <div class="row">
           <div class="col-md-12 col-lg-8">
             <div class="title-single-box">
-              <h1 class="title-single"><%=current_user.email %></h1>
-              <span class="color-text-a">Agent Immobiliari</span>
+              <h1 class="title-single"><%=current_user.email.split('@')[0].upcase %></h1>
             </div>
           </div>
           <div class="col-md-12 col-lg-4">
@@ -18,7 +17,7 @@
                   <a href="#">Agents</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                  Margaret Stone
+                  <%=current_user.email.split('@')[0] %>
                 </li>
               </ol>
             </nav>
@@ -44,8 +43,7 @@
                 <div class="agent-info-box">
                   <div class="agent-title">
                     <div class="title-box-d">
-                      <h3 class="title-d">Margaret Stone
-                        <br> Escala
+                      <h3 class="title-d"><%=current_user.email.split('@')[0].upcase %>
                       </h3>
                     </div>
                   </div>
