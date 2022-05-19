@@ -40,9 +40,7 @@
                 <div class="col-md-7">
                     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
                     <%= render "devise/shared/error_messages", resource: resource %>
-
                     <div class="row">
-                    
                       <div class="col-md-12 mb-3">
                         <div class="form-group">
                         <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"form-control form-control-lg form-control-a" ,placeholder:"Your Email"%>
@@ -55,14 +53,15 @@
                       </div>  
                       <div class="col-md-12 mb-3">
                         <div class="form-group">
-
                         <%= f.password_field :password_confirmation,autocomplete: "new-password",class:"form-control form-control-lg form-control-a" ,placeholder:"Confirm Password"%>
                         </div>
                       </div>
-                    
-          
-
-                      <div class="col-md-12 text-center">
+                      <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                          <%= f.file_field :profile_image%>
+                        </div>
+                      </div>
+                        <div class="col-md-12 text-center">
                         <div class="actions">
                           <%= f.submit "Create account", class:'btn btn-a' %>
                         </div>
