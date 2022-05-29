@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_one_attached :profile_image
+  has_many :properties
   validates :profile_image, attached: true, content_type: ['image/png', 'image/jpeg']
   validates :username, presence: true
   validates :phone, presence: true

@@ -6,7 +6,8 @@
         <span></span>
         <span></span>
       </button>
-      <a class="navbar-brand text-brand" href="index.html">Amarat<span class="color-b"></span></a>
+      
+      <%= link_to 'Amarat', root_path ,class:'navbar-brand text-brand'%>
 
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">
@@ -20,7 +21,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link " href="property-grid.html">Property</a>
+            <%= link_to 'Add property', new_property_path ,class:'nav-link'%>
           </li>
 
           <li class="nav-item">
