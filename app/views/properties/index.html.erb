@@ -1,43 +1,313 @@
 <p id="notice"><%= notice %></p>
+<!-- ======= Latest Properties Section ======= -->
+<section class="section-agents section-t8">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="title-wrap d-flex justify-content-between">
+          <div class="title-box">
+            <h2 class="title-a">Latest Properties</h2>
+          </div>
+          <div class="title-link">
+            <a href="agents-grid.html">All properties
+              <span class="bi bi-chevron-right"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
 
-<h1>All Properties</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th>Location</th>
-      <th>Property type</th>
-      <th>Status</th>
-      <th>Area</th>
-      <th>Bed</th>
-      <th>Bath</th>
-      <th>Garage</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @properties.each do |property| %>
-      <tr>
-        <td><%= property.description %></td>
-        <td><%= property.location %></td>
-        <td><%= property.property_type %></td>
-        <td><%= property.status %></td>
-        <td><%= property.area %></td>
-        <td><%= property.bed %></td>
-        <td><%= property.bath %></td>
-        <td><%= property.garage %></td>
-        <td><%= property.user %></td>
-        <td><%= link_to 'Show', property %></td>
-        <td><%= link_to 'Edit', edit_property_path(property) %></td>
-        <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+     <% @properties.each do |property| %>
+      <div class="col-md-4  mb-5">
+          <div class="card-box-a card-shadow">
+            <div class="img-box-a">
+            <% if property.images.attached?%>
+              <%= image_tag property.images.first ,class:"img-a img-fluid" %>
+            <% else %>
+              <%= image_tag "property-1.jpg" ,class:"img-a img-fluid" %>
+            <% end %>
+              
+            </div>
+            <div class="card-overlay">
+              <div class="card-overlay-a-content">
+                <div class="card-header-a">
+                  <h2 class="card-title-a">
+                     <%= link_to property.location , property%>
+                  </h2>
+                </div>
+                <div class="card-body-a">
+                  <div class="price-box d-flex">
+                    <span class="price-a"><%= property.property_type %> | $ <%=property.price %></span>
+                  </div>
+                  <%= link_to 'Click here to view', property ,class:'link-a'%>
+                </div>
+                <div class="card-footer-a">
+                  <ul class="card-info d-flex justify-content-around">
+                    <li>
+                      <h4 class="card-info-title">Area</h4>
+                      <span><%= property.area %>
+                      </span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Beds</h4>
+                      <span><%= property.bed %></span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Baths</h4>
+                      <span><%= property.bath %></span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Garages</h4>
+                      <span><%= property.garage %></span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
 
-<br>
 
-<%= link_to 'New Property', new_property_path %>
+      <div class="col-md-4  mb-5">
+          <div class="card-box-a card-shadow">
+            <div class="img-box-a">
+              <%= image_tag "property-2.jpg" ,class:"img-a img-fluid" %>
+            </div>
+            <div class="card-overlay">
+              <div class="card-overlay-a-content">
+                <div class="card-header-a">
+                  <h2 class="card-title-a">
+                    <a href="property-single.html">206 Mount
+                      <br /> Olive Road Two</a>
+                  </h2>
+                </div>
+                <div class="card-body-a">
+                  <div class="price-box d-flex">
+                    <span class="price-a">rent | $ 12.000</span>
+                  </div>
+                  <a href="#" class="link-a">Click here to view
+                    <span class="bi bi-chevron-right"></span>
+                  </a>
+                </div>
+                <div class="card-footer-a">
+                  <ul class="card-info d-flex justify-content-around">
+                    <li>
+                      <h4 class="card-info-title">Area</h4>
+                      <span>340m
+                        <sup>2</sup>
+                      </span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Beds</h4>
+                      <span>2</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Baths</h4>
+                      <span>4</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Garages</h4>
+                      <span>1</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-4 mb-5">
+          <div class="card-box-a card-shadow">
+            <div class="img-box-a">
+              <%= image_tag "property-3.jpg" ,class:"img-a img-fluid" %>
+            </div>
+            <div class="card-overlay">
+              <div class="card-overlay-a-content">
+                <div class="card-header-a">
+                  <h2 class="card-title-a">
+                    <a href="property-single.html">206 Mount
+                      <br /> Olive Road Two</a>
+                  </h2>
+                </div>
+                <div class="card-body-a">
+                  <div class="price-box d-flex">
+                    <span class="price-a">rent | $ 12.000</span>
+                  </div>
+                  <a href="#" class="link-a">Click here to view
+                    <span class="bi bi-chevron-right"></span>
+                  </a>
+                </div>
+                <div class="card-footer-a">
+                  <ul class="card-info d-flex justify-content-around">
+                    <li>
+                      <h4 class="card-info-title">Area</h4>
+                      <span>340m
+                        <sup>2</sup>
+                      </span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Beds</h4>
+                      <span>2</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Baths</h4>
+                      <span>4</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Garages</h4>
+                      <span>1</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-4 mb-5">
+          <div class="card-box-a card-shadow">
+            <div class="img-box-a">
+              <%= image_tag "property-4.jpg" ,class:"img-a img-fluid" %>
+            </div>
+            <div class="card-overlay">
+              <div class="card-overlay-a-content">
+                <div class="card-header-a">
+                  <h2 class="card-title-a">
+                    <a href="property-single.html">206 Mount
+                      <br /> Olive Road Two</a>
+                  </h2>
+                </div>
+                <div class="card-body-a">
+                  <div class="price-box d-flex">
+                    <span class="price-a">rent | $ 12.000</span>
+                  </div>
+                  <a href="#" class="link-a">Click here to view
+                    <span class="bi bi-chevron-right"></span>
+                  </a>
+                </div>
+                <div class="card-footer-a">
+                  <ul class="card-info d-flex justify-content-around">
+                    <li>
+                      <h4 class="card-info-title">Area</h4>
+                      <span>340m
+                        <sup>2</sup>
+                      </span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Beds</h4>
+                      <span>2</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Baths</h4>
+                      <span>4</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Garages</h4>
+                      <span>1</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-4 mb-5">
+          <div class="card-box-a card-shadow">
+            <div class="img-box-a">
+              <%= image_tag "property-5.jpg" ,class:"img-a img-fluid" %>
+            </div>
+            <div class="card-overlay">
+              <div class="card-overlay-a-content">
+                <div class="card-header-a">
+                  <h2 class="card-title-a">
+                    <a href="property-single.html">206 Mount
+                      <br /> Olive Road Two</a>
+                  </h2>
+                </div>
+                <div class="card-body-a">
+                  <div class="price-box d-flex">
+                    <span class="price-a">rent | $ 12.000</span>
+                  </div>
+                  <a href="#" class="link-a">Click here to view
+                    <span class="bi bi-chevron-right"></span>
+                  </a>
+                </div>
+                <div class="card-footer-a">
+                  <ul class="card-info d-flex justify-content-around">
+                    <li>
+                      <h4 class="card-info-title">Area</h4>
+                      <span>340m
+                        <sup>2</sup>
+                      </span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Beds</h4>
+                      <span>2</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Baths</h4>
+                      <span>4</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Garages</h4>
+                      <span>1</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-4 mb-5">
+          <div class="card-box-a card-shadow">
+            <div class="img-box-a">
+              <%= image_tag "property-6.jpg" ,class:"img-a img-fluid" %>
+            </div>
+            <div class="card-overlay">
+              <div class="card-overlay-a-content">
+                <div class="card-header-a">
+                  <h2 class="card-title-a">
+                    <a href="property-single.html">206 Mount
+                      <br /> Olive Road Two</a>
+                  </h2>
+                </div>
+                <div class="card-body-a">
+                  <div class="price-box d-flex">
+                    <span class="price-a">rent | $ 12.000</span>
+                  </div>
+                  <a href="#" class="link-a">Click here to view
+                    <span class="bi bi-chevron-right"></span>
+                  </a>
+                </div>
+                <div class="card-footer-a">
+                  <ul class="card-info d-flex justify-content-around">
+                    <li>
+                      <h4 class="card-info-title">Area</h4>
+                      <span>340m
+                        <sup>2</sup>
+                      </span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Beds</h4>
+                      <span>2</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Baths</h4>
+                      <span>4</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Garages</h4>
+                      <span>1</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    
+    </div>
+    
+  </div>
+</section>
+<!-- End Latest Properties Section -->
