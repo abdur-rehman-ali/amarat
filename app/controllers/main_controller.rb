@@ -1,5 +1,5 @@
 class MainController < ApplicationController
   def index
-    @properties = Property.all
+    @properties = Property.all.order("created_at DESC")
   end
 end
